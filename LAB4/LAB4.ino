@@ -62,10 +62,11 @@ pinMode(avanzar, INPUT_PULLUP);
 pinMode(avanzar1, INPUT_PULLUP);  
 jugador1();
 jugador2();
+semaforo();
 }
 
 void loop(){
-semaforo();
+//semaforo();
 jugador1();
 jugador2();
 }
