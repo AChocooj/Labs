@@ -49,9 +49,18 @@ pinMode(led16, OUTPUT);
 
 pinMode(avanzar, INPUT_PULLUP);
 pinMode(avanzar1, INPUT_PULLUP);  
+jugador1();
+jugador2();
+
 }
 
-void jugador1(){
+
+void loop(){
+
+}
+
+
+void jugador1(void){
   //secuencia para aumentar el contador
 if (digitalRead(avanzar) == LOW){
   presionado1 = 1;//cambia de estado si se presiona el pulsador 1
@@ -157,7 +166,7 @@ switch (contador1)
       break; 
   }
 }
-void jugador2(){
+void jugador2(void){
   //secuencia para aumentar el contador2
 if (digitalRead(avanzar1) == LOW){
   presionado2 = 1;//cambia de estado si se presiona el pulsador 2
@@ -262,11 +271,4 @@ if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
       digitalWrite(led16, HIGH);
       break; 
   }
-}
-
-
-void loop(){
-void jugador1();
-void jugador2();
- 
 }
