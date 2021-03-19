@@ -54,6 +54,10 @@ pinMode(led14, OUTPUT);
 pinMode(led15, OUTPUT);
 pinMode(led16, OUTPUT);
 
+pinMode(ledR, OUTPUT);
+pinMode(ledG, OUTPUT);
+pinMode(ledB, OUTPUT);
+
 pinMode(avanzar, INPUT_PULLUP);
 pinMode(avanzar1, INPUT_PULLUP);  
 jugador1();
@@ -61,6 +65,7 @@ jugador2();
 }
 
 void loop(){
+semaforo();
 jugador1();
 jugador2();
 }
@@ -279,5 +284,13 @@ if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
   }
 }
 void semaforo(void){
-  
+  digitalWrite(ledR, HIGH);
+  digitalWrite(ledG, LOW);
+  delay(1000);
+  digitalWrite(ledR, HIGH);
+  digitalWrite(ledG, HIGH);
+  delay(1000);
+  digitalWrite(ledR, LOW);
+  digitalWrite(ledG, HIGH);
+  delay(1000);
 }
