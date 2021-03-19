@@ -18,8 +18,11 @@ int led15 = PD_1;
 int led16 = PD_2;
 
 int avanzar = PUSH2;//puerto para el push2 de la tiva
+int avanzar1 = PUSH1;//puerto para el push1 de la tiva
 int presionado1 = 0;//variable para el antirrebote
-int contador1;//variable del contador
+int presionado2 = 0;//variable para el anterrebote
+int contador1;//variable del contador1
+int contador2;//variable del contador2
 
 
 void setup() {
@@ -32,7 +35,18 @@ pinMode(led5, OUTPUT);
 pinMode(led6, OUTPUT);
 pinMode(led7, OUTPUT);
 pinMode(led8, OUTPUT);
-pinMode(avanzar, INPUT_PULLUP);   
+
+pinMode(led9, OUTPUT);
+pinMode(led10, OUTPUT);
+pinMode(led11, OUTPUT);
+pinMode(led12, OUTPUT);
+pinMode(led13, OUTPUT);
+pinMode(led14, OUTPUT);
+pinMode(led15, OUTPUT);
+pinMode(led16, OUTPUT);
+
+pinMode(avanzar, INPUT_PULLUP);
+pinMode(avanzar1, INPUT_PULLUP);  
 }
 
 void loop(){
