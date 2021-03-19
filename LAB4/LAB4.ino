@@ -8,14 +8,14 @@ int led6 = PB_5;
 int led7 = PB_6;
 int led8 = PB_7;
 //declaracion de pines del jugador 2
-int led9 = PF_0;
-int led10 = PF_1;
-int led11 = PF_2;
-int led12 = PF_3;
-int led13 = PF_4;
-int led14 = PD_0;
-int led15 = PD_1;
-int led16 = PD_2;
+int led9 = PD_0;
+int led10 = PD_1;
+int led11 = PD_2;
+int led12 = PD_3;
+int led13 = PE_1;
+int led14 = PE_2;
+int led15 = PE_3;
+int led16 = PE_4;
 
 int avanzar = PUSH2;//puerto para el push2 de la tiva
 int avanzar1 = PUSH1;//puerto para el push1 de la tiva
@@ -24,6 +24,8 @@ int presionado2 = 0;//variable para el anterrebote
 int contador1;//variable del contador1
 int contador2;//variable del contador2
 
+void jugador1(void);
+void jugador2(void);
 
 void setup() {
   //declaracion de entradas/salidas digitales
@@ -49,7 +51,7 @@ pinMode(avanzar, INPUT_PULLUP);
 pinMode(avanzar1, INPUT_PULLUP);  
 }
 
-void loop(){
+void jugador1(){
   //secuencia para aumentar el contador
 if (digitalRead(avanzar) == LOW){
   presionado1 = 1;//cambia de estado si se presiona el pulsador 1
@@ -61,19 +63,6 @@ if (digitalRead(avanzar) == HIGH && presionado1 == 1){
     contador1 = 0;//se reinicia el contador regresando al led 1
   }
 }
-
-//secuencia para aumentar el contador2
-if (digitalRead(avanzar1) == LOW){
-  presionado2 = 1;//cambia de estado si se presiona el pulsador 2
-}
-if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
-  presionado2 = 0;//se reinicia la variable del antirrebote
-  contador2++;//el contador aumenta una unidad
-  if (contador2 > 7){
-    contador2 = 0;//se reinicia el contador regresando al led 1
-  }
-}
-
 //switch con todos los casos para el contador de decada
 //este solo para el jugador 1 
 switch (contador1)
@@ -167,6 +156,20 @@ switch (contador1)
       digitalWrite(led8, HIGH);
       break; 
   }
+}
+void jugador2(){
+  //secuencia para aumentar el contador2
+if (digitalRead(avanzar1) == LOW){
+  presionado2 = 1;//cambia de estado si se presiona el pulsador 2
+}
+if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
+  presionado2 = 0;//se reinicia la variable del antirrebote
+  contador2++;//el contador aumenta una unidad
+  if (contador2 > 7){
+    contador2 = 0;//se reinicia el contador regresando al led 1
+  }
+}
+
   //switch con todos los casos para el contador de decada
 //este solo para el jugador 2
   switch (contador2){
@@ -259,4 +262,11 @@ switch (contador1)
       digitalWrite(led16, HIGH);
       break; 
   }
+}
+
+
+void loop(){
+void jugador1();
+void jugador2();
+ 
 }
