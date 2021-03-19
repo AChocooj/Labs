@@ -62,7 +62,7 @@ if (digitalRead(avanzar) == HIGH && presionado1 == 1){
   }
 }
 
-//secuencia para aumentar el contador1
+//secuencia para aumentar el contador2
 if (digitalRead(avanzar1) == LOW){
   presionado2 = 1;//cambia de estado si se presiona el pulsador 2
 }
@@ -167,6 +167,8 @@ switch (contador1)
       digitalWrite(led8, HIGH);
       break; 
   }
+  //switch con todos los casos para el contador de decada
+//este solo para el jugador 2
   switch (contador2){
      //Enciende los LEDs de acuerdo al contador
     case 0:
