@@ -66,7 +66,7 @@ semaforo();
 }
 
 void loop(){
-//semaforo();
+
 jugador1();
 jugador2();
 }
