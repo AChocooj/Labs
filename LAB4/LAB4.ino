@@ -16,7 +16,13 @@ int led13 = PE_1;
 int led14 = PE_2;
 int led15 = PE_3;
 int led16 = PE_4;
-
+//declaracion de pines para el semaforo
+int ledR = RED_LED;
+int ledG = GREEN_LED;
+int ledB = BLUE_LED;
+//***************************************************
+//varias variables 
+//***************************************************
 int avanzar = PUSH2;//puerto para el push2 de la tiva
 int avanzar1 = PUSH1;//puerto para el push1 de la tiva
 int presionado1 = 0;//variable para el antirrebote
@@ -26,6 +32,7 @@ int contador2;//variable del contador2
 
 void jugador1(void);
 void jugador2(void);
+void semaforo(void);
 
 void setup() {
   //declaracion de entradas/salidas digitales
@@ -51,12 +58,11 @@ pinMode(avanzar, INPUT_PULLUP);
 pinMode(avanzar1, INPUT_PULLUP);  
 jugador1();
 jugador2();
-
 }
 
-
 void loop(){
-
+jugador1();
+jugador2();
 }
 
 
@@ -271,4 +277,7 @@ if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
       digitalWrite(led16, HIGH);
       break; 
   }
+}
+void semaforo(void){
+  
 }
