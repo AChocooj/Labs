@@ -167,5 +167,94 @@ switch (contador1)
       digitalWrite(led8, HIGH);
       break; 
   }
-  
+  switch (contador2){
+     //Enciende los LEDs de acuerdo al contador
+    case 0:
+      digitalWrite(led9, HIGH); //Enciende el LED 9 y apaga los demas
+      digitalWrite(led10, LOW);
+      digitalWrite(led11, LOW);
+      digitalWrite(led12, LOW);
+      digitalWrite(led13, LOW);
+      digitalWrite(led14, LOW);
+      digitalWrite(led15, LOW);
+      digitalWrite(led16, LOW);
+      break;
+
+    case 1:
+      digitalWrite(led9, LOW); //Enciende el LED 10 y apaga los demas
+      digitalWrite(led10, HIGH);
+      digitalWrite(led11, LOW);
+      digitalWrite(led12, LOW);
+      digitalWrite(led13, LOW);
+      digitalWrite(led14, LOW);
+      digitalWrite(led15, LOW);
+      digitalWrite(led16, LOW);
+      break;
+
+    case 2:
+      digitalWrite(led9, LOW); //Enciende el LED 11 y apaga los demas
+      digitalWrite(led10, LOW);
+      digitalWrite(led11, HIGH);
+      digitalWrite(led12, LOW);
+      digitalWrite(led13, LOW);
+      digitalWrite(led14, LOW);
+      digitalWrite(led15, LOW);
+      digitalWrite(led16, LOW);
+      break;
+
+    case 3:
+      digitalWrite(led9, LOW); //Enciende el LED 12 y apaga los demas
+      digitalWrite(led10, LOW);
+      digitalWrite(led11, LOW);
+      digitalWrite(led12, HIGH);
+      digitalWrite(led13, LOW);
+      digitalWrite(led14, LOW);
+      digitalWrite(led15, LOW);
+      digitalWrite(led16, LOW);
+      break;
+
+    case 4:
+      digitalWrite(led9, LOW); //Enciende el LED 13 y apaga los demas
+      digitalWrite(led10, LOW);
+      digitalWrite(led11, LOW);
+      digitalWrite(led12, LOW);
+      digitalWrite(led13, HIGH);
+      digitalWrite(led14, LOW);
+      digitalWrite(led15, LOW);
+      digitalWrite(led16, LOW);
+      break;
+      
+     case 5:
+      digitalWrite(led9, LOW); //Enciende el LED 14 y apaga los demas
+      digitalWrite(led10, LOW);
+      digitalWrite(led11, LOW);
+      digitalWrite(led12, LOW);
+      digitalWrite(led13, LOW);
+      digitalWrite(led14, HIGH);
+      digitalWrite(led15, LOW);
+      digitalWrite(led16, LOW);
+      break; 
+       
+      case 6:
+      digitalWrite(led9, LOW); //Enciende el LED 15 y apaga los demas
+      digitalWrite(led10, LOW);
+      digitalWrite(led11, LOW);
+      digitalWrite(led12, LOW);
+      digitalWrite(led13, LOW);
+      digitalWrite(led14, LOW);
+      digitalWrite(led15, HIGH);
+      digitalWrite(led16, LOW);
+      break; 
+      
+      case 7:
+      digitalWrite(led9, LOW); //Enciende el LED 16 y apaga los demas
+      digitalWrite(led10, LOW);
+      digitalWrite(led11, LOW);
+      digitalWrite(led12, LOW);
+      digitalWrite(led13, LOW);
+      digitalWrite(led14, LOW);
+      digitalWrite(led15, LOW);
+      digitalWrite(led16, HIGH);
+      break; 
+  }
 }
