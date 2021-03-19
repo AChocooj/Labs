@@ -52,7 +52,7 @@ pinMode(avanzar1, INPUT_PULLUP);
 void loop(){
   //secuencia para aumentar el contador
 if (digitalRead(avanzar) == LOW){
-  presionado1 = 1;//cambia de estado si se presiona el pulsador
+  presionado1 = 1;//cambia de estado si se presiona el pulsador 1
 }
 if (digitalRead(avanzar) == HIGH && presionado1 == 1){
   presionado1 = 0;//se reinicia la variable del antirrebote
@@ -61,6 +61,19 @@ if (digitalRead(avanzar) == HIGH && presionado1 == 1){
     contador1 = 0;//se reinicia el contador regresando al led 1
   }
 }
+
+//secuencia para aumentar el contador1
+if (digitalRead(avanzar1) == LOW){
+  presionado2 = 1;//cambia de estado si se presiona el pulsador 2
+}
+if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
+  presionado2 = 0;//se reinicia la variable del antirrebote
+  contador2++;//el contador aumenta una unidad
+  if (contador2 > 7){
+    contador2 = 0;//se reinicia el contador regresando al led 1
+  }
+}
+
 //switch con todos los casos para el contador de decada
 //este solo para el jugador 1 
 switch (contador1)
