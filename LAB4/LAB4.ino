@@ -66,7 +66,7 @@ semaforo();
 }
 
 void loop(){
-
+//semaforo();
 jugador1();
 jugador2();
 }
@@ -294,4 +294,6 @@ void semaforo(void){
   digitalWrite(ledR, LOW);
   digitalWrite(ledG, HIGH);
   delay(1000);
+  digitalWrite(ledG, HIGH);
+  digitalWrite(ledB, HIGH);
 }
