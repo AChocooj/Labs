@@ -197,9 +197,9 @@ if (digitalRead(avanzar1) == LOW){
 if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
   presionado2 = 0;//se reinicia la variable del antirrebote
   contador2++;//el contador aumenta una unidad
-  if (contador2 == 8){
-    contador2 = 0;//se reinicia el contador regresando al led 1
-  }
+  //if (contador2 == 8){
+    //contador2 = 0;//se reinicia el contador regresando al led 1
+  //}
 }
 
   //switch con todos los casos para el contador de decada
@@ -313,6 +313,6 @@ if (contador1==8){
   digitalWrite(led17, HIGH);  
 }
 if (contador2==8){
-  led18=HIGH;
+  digitalWrite(led18, HIGH);
 }
 }
