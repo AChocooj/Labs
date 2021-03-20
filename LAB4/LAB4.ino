@@ -32,7 +32,7 @@ int presionado1 = 0;//variable para el antirrebote
 int presionado2 = 0;//variable para el anterrebote
 int contador1;//variable del contador1
 int contador2;//variable del contador2
-
+//funciones para ordenar mejor el codigo
 void jugador1(void);
 void jugador2(void);
 void semaforo(void);
