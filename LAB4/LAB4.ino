@@ -75,8 +75,6 @@ win();
 }
 
 void loop(){
-
-
 jugador1();
 jugador2();
 win();
