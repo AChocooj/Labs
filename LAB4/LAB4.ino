@@ -12,14 +12,17 @@ int led9 = PD_0;
 int led10 = PD_1;
 int led11 = PD_2;
 int led12 = PD_3;
-int led13 = PE_1;
-int led14 = PE_2;
-int led15 = PE_3;
-int led16 = PE_4;
+int led13 = PC_4;
+int led14 = PC_5;
+int led15 = PC_6;
+int led16 = PC_7;
 //declaracion de pines para el semaforo
 int ledR = RED_LED;
 int ledG = GREEN_LED;
 int ledB = BLUE_LED;
+//leds de ganador
+int led17 = PA_6;
+int led18 = PA_7;
 //***************************************************
 //varias variables 
 //***************************************************
@@ -33,6 +36,7 @@ int contador2;//variable del contador2
 void jugador1(void);
 void jugador2(void);
 void semaforo(void);
+void win(void);
 
 void setup() {
   //declaracion de entradas/salidas digitales
@@ -58,17 +62,24 @@ pinMode(ledR, OUTPUT);
 pinMode(ledG, OUTPUT);
 pinMode(ledB, OUTPUT);
 
+pinMode(led17, OUTPUT);
+pinMode(led18, OUTPUT);
+
 pinMode(avanzar, INPUT_PULLUP);
 pinMode(avanzar1, INPUT_PULLUP);  
+
 jugador1();
 jugador2();
 semaforo();
+win();
 }
 
 void loop(){
-//semaforo();
+
+
 jugador1();
 jugador2();
+win();
 }
 
 
@@ -80,9 +91,9 @@ if (digitalRead(avanzar) == LOW){
 if (digitalRead(avanzar) == HIGH && presionado1 == 1){
   presionado1 = 0;//se reinicia la variable del antirrebote
   contador1++;//el contador aumenta una unidad
-  if (contador1 > 7){
-    contador1 = 0;//se reinicia el contador regresando al led 1
-  }
+  //if (contador1 == 8){
+    //contador1 = 0;//se reinicia el contador regresando al led 1
+  //}
 }
 //switch con todos los casos para el contador de decada
 //este solo para el jugador 1 
@@ -186,7 +197,7 @@ if (digitalRead(avanzar1) == LOW){
 if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
   presionado2 = 0;//se reinicia la variable del antirrebote
   contador2++;//el contador aumenta una unidad
-  if (contador2 > 7){
+  if (contador2 == 8){
     contador2 = 0;//se reinicia el contador regresando al led 1
   }
 }
@@ -296,4 +307,12 @@ void semaforo(void){
   delay(1000);
   digitalWrite(ledG, HIGH);
   digitalWrite(ledB, HIGH);
+}
+void win(void){
+if (contador1==8){
+  digitalWrite(led17, HIGH);  
+}
+if (contador2==8){
+  led18=HIGH;
+}
 }
