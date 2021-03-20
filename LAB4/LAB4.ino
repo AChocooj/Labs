@@ -333,9 +333,11 @@ void win(void){
 if (contador1==8){
   digitalWrite(led17, HIGH);
   digitalWrite(led8, LOW);  
+ 
 }
 if (contador2==8){
   digitalWrite(led18, HIGH);
   digitalWrite(led16, LOW);
+  
 }
 }
