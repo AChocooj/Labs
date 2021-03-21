@@ -68,10 +68,10 @@ pinMode(led18, OUTPUT);
 pinMode(avanzar, INPUT_PULLUP);
 pinMode(avanzar1, INPUT_PULLUP);  
 
-jugador1();
-jugador2();
+//jugador1();
+//jugador2();
 semaforo();
-win();
+//win();
 }
 
 void loop(){
@@ -332,12 +332,12 @@ void semaforo(void){
   digitalWrite(ledB, HIGH);
 }
 void win(void){
-if (contador1==8){
+if (contador1>8){
   digitalWrite(led17, HIGH);
   digitalWrite(led8, LOW);  
  
 }
-if (contador2==8){
+if (contador2>8){
   digitalWrite(led18, HIGH);
   digitalWrite(led16, LOW);
 }
