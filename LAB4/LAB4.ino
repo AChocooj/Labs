@@ -8,8 +8,8 @@ int led6 = PB_5;
 int led7 = PB_6;
 int led8 = PB_7;
 //declaracion de pines del jugador 2
-int led9 = PD_0;
-int led10 = PD_1;
+int led9 = PD_6;
+int led10 = PD_7;
 int led11 = PD_2;
 int led12 = PD_3;
 int led13 = PC_4;
@@ -69,14 +69,14 @@ pinMode(avanzar, INPUT_PULLUP);
 pinMode(avanzar1, INPUT_PULLUP);  
 
 jugador1();
-//jugador2();
+jugador2();
 semaforo();
 win();
 }
 
 void loop(){
 jugador1();
-//jugador2();
+jugador2();
 win();
 }
 
@@ -199,7 +199,7 @@ case 0:
       break; 
   }
 }
-/*void jugador2(void){
+void jugador2(void){
   //secuencia para aumentar el contador2
 if (digitalRead(avanzar1) == LOW){
   presionado2 = 1;//cambia de estado si se presiona el pulsador 2
@@ -316,7 +316,7 @@ if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
       digitalWrite(led16, HIGH);
       break; 
   }
-}*/
+}
 void semaforo(void){
 
   digitalWrite(ledR, HIGH);
