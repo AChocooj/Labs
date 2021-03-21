@@ -69,14 +69,14 @@ pinMode(avanzar, INPUT_PULLUP);
 pinMode(avanzar1, INPUT_PULLUP);  
 
 jugador1();
-jugador2();
+//jugador2();
 semaforo();
 win();
 }
 
 void loop(){
 jugador1();
-jugador2();
+//jugador2();
 win();
 }
 
@@ -87,6 +87,7 @@ if (digitalRead(avanzar) == LOW){
 }
 if (digitalRead(avanzar) == HIGH && presionado1 == 1){
   presionado1 = 0;//se reinicia la variable del antirrebote
+  delay(100);
   contador1++;//el contador aumenta una unidad
   //if (contador1 == 8){
     //contador1 = 0;//se reinicia el contador regresando al led 1
@@ -198,13 +199,14 @@ case 0:
       break; 
   }
 }
-void jugador2(void){
+/*void jugador2(void){
   //secuencia para aumentar el contador2
 if (digitalRead(avanzar1) == LOW){
   presionado2 = 1;//cambia de estado si se presiona el pulsador 2
 }
 if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
   presionado2 = 0;//se reinicia la variable del antirrebote
+  delay(100);
   contador2++;//el contador aumenta una unidad
   //if (contador2 == 8){
     //contador2 = 0;//se reinicia el contador regresando al led 1
@@ -314,7 +316,7 @@ if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
       digitalWrite(led16, HIGH);
       break; 
   }
-}
+}*/
 void semaforo(void){
 
   digitalWrite(ledR, HIGH);
