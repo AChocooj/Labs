@@ -68,10 +68,9 @@ pinMode(led18, OUTPUT);
 pinMode(avanzar, INPUT_PULLUP);
 pinMode(avanzar1, INPUT_PULLUP);  
 
-//jugador1();
-//jugador2();
+
 semaforo();
-//win();
+
 }
 
 void loop(){
