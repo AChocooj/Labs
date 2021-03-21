@@ -8,7 +8,7 @@ int led6 = PB_5;
 int led7 = PB_6;
 int led8 = PB_7;
 //declaracion de pines del jugador 2
-int led9 = PD_6;
+int led9 = PA_5;
 int led10 = PD_7;
 int led11 = PD_2;
 int led12 = PD_3;
@@ -30,8 +30,8 @@ int avanzar = PUSH2;//puerto para el push2 de la tiva
 int avanzar1 = PUSH1;//puerto para el push1 de la tiva
 int presionado1 = 0;//variable para el antirrebote
 int presionado2 = 0;//variable para el anterrebote
-int contador1;//variable del contador1
-int contador2;//variable del contador2
+int contador1=0;//variable del contador1
+int contador2=0;//variable del contador2
 //funciones para ordenar mejor el codigo
 void jugador1(void);
 void jugador2(void);
@@ -49,7 +49,7 @@ pinMode(led6, OUTPUT);
 pinMode(led7, OUTPUT);
 pinMode(led8, OUTPUT);
 
-pinMode(led9, OUTPUT);
+pinMode(led9,  OUTPUT);
 pinMode(led10, OUTPUT);
 pinMode(led11, OUTPUT);
 pinMode(led12, OUTPUT);
@@ -196,7 +196,7 @@ case 0:
       digitalWrite(led6, LOW);
       digitalWrite(led7, LOW);
       digitalWrite(led8, HIGH);
-      break; 
+      break;
   }
 }
 void jugador2(void){
@@ -340,6 +340,5 @@ if (contador1==8){
 if (contador2==8){
   digitalWrite(led18, HIGH);
   digitalWrite(led16, LOW);
-  
 }
 }
