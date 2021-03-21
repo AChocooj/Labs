@@ -217,7 +217,7 @@ if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
   switch (contador2){
      //Enciende los LEDs de acuerdo al contador
     
-    case 0:
+    /*case 0:
       digitalWrite(led9,  LOW); //INICIA EN 0
       digitalWrite(led10, LOW);
       digitalWrite(led11, LOW);
@@ -226,7 +226,7 @@ if (digitalRead(avanzar1) == HIGH && presionado2 == 1){
       digitalWrite(led14, LOW);
       digitalWrite(led15, LOW);
       digitalWrite(led16, LOW);
-    
+    */
     case 1:
       digitalWrite(led9, HIGH); //Enciende el LED 9 y apaga los demas
       digitalWrite(led10, LOW);
