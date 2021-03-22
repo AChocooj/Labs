@@ -37,7 +37,6 @@ void jugador1(void);
 void jugador2(void);
 void semaforo(void);
 void win(void);
-void pausa(void);
 
 void setup() {
   //declaracion de entradas/salidas digitales
@@ -78,7 +77,7 @@ void loop(){
 jugador1();
 jugador2();
 win();
-pausa();
+
  
    
 }
@@ -338,22 +337,11 @@ void win(void){
 if (contador1>8){
   digitalWrite(led17, HIGH);
   digitalWrite(led8, LOW);  
- 
+  loop();
 }
 if (contador2>8){
   digitalWrite(led18, HIGH);
   digitalWrite(led16, LOW);
-}
-}
-void pausa(void){
-if(digitalRead(led17)==HIGH){
-  pausa();
-}else{
-  loop();
-}
-if(digitalRead(led18)==HIGH){
-  pausa();
-}else{
   loop();
 }
 }
