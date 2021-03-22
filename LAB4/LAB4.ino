@@ -38,6 +38,7 @@ void jugador2(void);
 void semaforo(void);
 void win(void);
 
+
 void setup() {
   //declaracion de entradas/salidas digitales
 pinMode(led1, OUTPUT);
@@ -74,9 +75,18 @@ semaforo();
 }
 
 void loop(){
+  
 jugador1();
 jugador2();
 win();
+ 
+ if (led17 == HIGH){
+  void loop(0);
+ }
+ if (led18 == HIGH){
+ void loop(0);
+ }
+   
 }
 
 void jugador1(void){
