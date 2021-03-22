@@ -37,7 +37,7 @@ void jugador1(void);
 void jugador2(void);
 void semaforo(void);
 void win(void);
-
+void pausa(void);
 
 void setup() {
   //declaracion de entradas/salidas digitales
@@ -69,7 +69,6 @@ pinMode(led18, OUTPUT);
 pinMode(avanzar, INPUT_PULLUP);
 pinMode(avanzar1, INPUT_PULLUP);  
 
-
 semaforo();
 
 }
@@ -79,13 +78,8 @@ void loop(){
 jugador1();
 jugador2();
 win();
+pausa();
  
- if (led17 == HIGH){
-  void loop(0);
- }
- if (led18 == HIGH){
- void loop(0);
- }
    
 }
 
@@ -349,5 +343,17 @@ if (contador1>8){
 if (contador2>8){
   digitalWrite(led18, HIGH);
   digitalWrite(led16, LOW);
+}
+}
+void pausa(void){
+if(digitalRead(led17)==HIGH){
+  pausa();
+}else{
+  loop();
+}
+if(digitalRead(led18)==HIGH){
+  pausa();
+}else{
+  loop();
 }
 }
