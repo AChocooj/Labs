@@ -1,3 +1,5 @@
+//Universidad del Valle de Guatemala
+//Allison Estuardo Aguilar Chocooj
 //declaracion de pines del jugador 1
 int led1 = PB_0;
 int led2 = PB_1;
