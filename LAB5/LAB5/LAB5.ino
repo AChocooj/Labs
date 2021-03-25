@@ -75,8 +75,7 @@ if(Byte == '3'){
 }
 }
 /*La funcion del vector de interrupciones y las subrutinas
-  para el directorio de la SD 
-*/
+  para el directorio de la SD */
 void printDirectory(File dir, int numTabs){
   while(true){
     File entry = dir.openNextFile();
