@@ -24,10 +24,12 @@ Serial.print("Inicializando la memoria SD...");
 pinMode(10, OUTPUT);//pin 10 como salida
 
 if (!SD.begin(4)){
-  Serial.println("IInicializacion fallida...!");//inicializacion fallida de la SD
+  Serial.println("Inicializacion fallida...!");//inicializacion fallida de la SD
   return;
 }
 Serial.println("Inicializacion correcta :D");
+root = SD.open("/");//directorio de la rama de la SD
+printDirectory(root, 0);//llamamos al directorio de la SD
 }
 
 void loop() {
