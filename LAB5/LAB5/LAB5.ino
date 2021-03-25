@@ -69,7 +69,7 @@ if(Byte == '3'){
     myFile.close();
   }
   else{
-    Serial.rpintln("error al abrir el .txt");
+    Serial.println("error al abrir el .txt");
   }
 } 
 }
@@ -86,6 +86,16 @@ void printDirectory(File dir, int numTabs){
     for (uint8_t i=0; i<numTabs; i++){
       Serial.print('\t');
     }
+    Serial.print(entry.name());
+    if (entry.isDirectory()){
+      Serial.println("/");
+      printDirectroy(entry, numTabs+1);
+    }
+    else{
+      //moestarara el tamaño de los archivos
+      Serial.print("\t\t");
+      Serial.println(entry.size(), DEC);
+    }
+    entry.close();
   }
-  
 }
