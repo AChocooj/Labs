@@ -23,6 +23,11 @@ SPI.setModule(0);//Configuracion para la inicializacion del SPI
 Serial.print("Inicializando la memoria SD...");
 pinMode(10, OUTPUT);//pin 10 como salida
 
+if (!SD.begin(4)){
+  Serial.println("IInicializacion fallida...!");//inicializacion fallida de la SD
+  return;
+}
+Serial.println("Inicializacion correcta :D");
 }
 
 void loop() {
