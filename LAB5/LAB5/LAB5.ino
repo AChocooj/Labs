@@ -29,7 +29,7 @@ if (!SD.begin(4)){
 }
 Serial.println("Inicializacion correcta :D");
 root = SD.open("/");//directorio de la rama de la SD
-//printDirectory(root, 0);//llamamos al directorio de la SD
+printDirectory(root, 0);//llamamos al directorio de la SD
 }//ver eso del error
 
 void loop() {
