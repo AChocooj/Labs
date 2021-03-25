@@ -19,7 +19,9 @@ Serial.begin(9600);
 while(!Serial){
   ;//Esperamos a que se conecte el puerto
 }
-
+SPI.setModule(0);//Configuracion para la inicializacion del SPI
+Serial.print("Inicializando la memoria SD...");
+pinMode(10, OUTPUT);//pin 10 como salida
 
 }
 
