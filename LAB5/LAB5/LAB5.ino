@@ -29,10 +29,27 @@ if (!SD.begin(4)){
 }
 Serial.println("Inicializacion correcta :D");
 root = SD.open("/");//directorio de la rama de la SD
-printDirectory(root, 0);//llamamos al directorio de la SD
-}
+//printDirectory(root, 0);//llamamos al directorio de la SD
+}//ver eso del error
 
 void loop() {
   // put your main code here, to run repeatedly: 
+if (Serial.available()>0){
+  Byte = Serial.read();
+  if (Byte == '1'){//seleccionaria el primer archivo que tenga
+    myFile = SD.open(".....");//debe de ir el nombre del archivo 
+    if (myFile){
+      while (myFile.available()){
+        Serial.write(myFile.read());
+      }
+      myFile.close();
+    }
+    else{
+      Serial.println("error al abrir el .txt");
+    }
+  }
+  
+}
+
   
 }
