@@ -48,8 +48,29 @@ if (Serial.available()>0){
       Serial.println("error al abrir el .txt");
     }
   }
-  
+if (Byte == '2'){
+  myFile = SD.open(".....");//segundo archivo
+  if(myFile){
+    while (myFile.available()){
+      Serial.write(myFile.read());
+    }
+    myFile.close();
+  }
+  else{
+    Serial.println("error al abrir el .txt");
+  }
 }
-
-  
+if(Byte == '3'){
+  myFile = SD.open(".....");//tercer archivo
+  if(myFile){
+    while (myFile.available()){
+      Serial.write(myFile.read());
+    }
+    myFile.close();
+  }
+  else{
+    Serial.rpintln("error al abrir el .txt");
+  }
+} 
+}
 }
