@@ -37,7 +37,7 @@ void loop() {
 if (Serial.available()>0){
   Byte = Serial.read();
   if (Byte == '1'){//seleccionaria el primer archivo que tenga
-    myFile = SD.open("YOSHI");//debe de ir el nombre del archivo 
+    myFile = SD.open("YOSHI.txt");//debe de ir el nombre del archivo 
     if (myFile){
       while (myFile.available()){
         Serial.write(myFile.read());
@@ -49,7 +49,7 @@ if (Serial.available()>0){
     }
   }
 if (Byte == '2'){
-  myFile = SD.open("BOWSER");//segundo archivo
+  myFile = SD.open("BOWSER.txt");//segundo archivo
   if(myFile){
     while (myFile.available()){
       Serial.write(myFile.read());
@@ -61,7 +61,7 @@ if (Byte == '2'){
   }
 }
 if(Byte == '3'){
-  myFile = SD.open("MARIO");//tercer archivo
+  myFile = SD.open("MARIO.txt");//tercer archivo
   if(myFile){
     while (myFile.available()){
       Serial.write(myFile.read());
