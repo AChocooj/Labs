@@ -12,7 +12,7 @@ CS - pin 4
 File myFile;
 File root;
 int Byte = 0;
-
+void printDirectory(void);
 void setup() {
   // put your setup code here, to run once:
 Serial.begin(9600);
@@ -89,7 +89,7 @@ void printDirectory(File dir, int numTabs){
     Serial.print(entry.name());
     if (entry.isDirectory()){
       Serial.println("/");
-      printDirectroy(entry, numTabs+1);
+      printDirectory(entry, numTabs+1);
     }
     else{
       //moestarara el tamaño de los archivos
