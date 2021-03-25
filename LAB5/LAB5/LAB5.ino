@@ -74,3 +74,18 @@ if(Byte == '3'){
 } 
 }
 }
+/*La funcion del vector de interrupciones y las subrutinas
+  para el directorio de la SD 
+*/
+void printDirectory(File dir, int numTabs){
+  while(true){
+    File entry = dir.openNextFile();
+    if(!entry){//no más archivos
+      break;
+    }
+    for (uint8_t i=0; i<numTabs; i++){
+      Serial.print('\t');
+    }
+  }
+  
+}
