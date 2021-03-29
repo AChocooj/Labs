@@ -78,7 +78,7 @@ void printDirectory(File dir, int numTabs){
       break;
     }
     for (uint8_t i=0; i<numTabs; i++){
-      Serial.print('\t');
+      Serial.println('\t');
     }
     Serial.print(entry.name());
     if (entry.isDirectory()){
