@@ -5,22 +5,18 @@ MISO - pin 12
 CLK - pin 13 
 CS - pin 4
 */
-
 #include <SPI.h>
 #include <SD.h>
-
 File myFile;
 File root;
 int Byte = 0;
 void printDirectory(void);
-void iniciar(void);
 void setup() {
   // put your setup code here, to run once:
 Serial.begin(9600);
 while(!Serial){
   ;//Esperamos a que se conecte el puerto
 }
-/*void iniciar (void){
 SPI.setModule(0);//Configuracion para la inicializacion del SPI
 Serial.print("Inicializando la memoria SD...");
 if (!SD.begin(4)){
@@ -30,9 +26,7 @@ if (!SD.begin(4)){
 Serial.println("Inicializacion correcta :D");
 root = SD.open("/");//directorio de la rama de la SD
 printDirectory(root, 0);//llamamos al directorio de la SD
-}*/
 }
-
 void loop() {
   // put your main code here, to run repeatedly: 
 if (Serial.available()>0){
@@ -47,7 +41,6 @@ if (Serial.available()>0){
     }
     else{
       Serial.println("error al abrir el .txt");
-      void iniciar ();
     }
   }
 if (Byte == '2'){
@@ -99,16 +92,4 @@ void printDirectory(File dir, int numTabs){
     }
     entry.close();
   }
-}
-
-void iniciar (void){
-SPI.setModule(0);//Configuracion para la inicializacion del SPI
-Serial.print("Inicializando la memoria SD...");
-if (!SD.begin(4)){
-  Serial.println("Inicializacion fallida...!");//inicializacion fallida de la SD
-  return;
-}
-Serial.println("Inicializacion correcta :D");
-root = SD.open("/");//directorio de la rama de la SD
-printDirectory(root, 0);//llamamos al directorio de la SD
 }
