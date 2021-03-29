@@ -21,8 +21,6 @@ while(!Serial){
 }
 SPI.setModule(0);//Configuracion para la inicializacion del SPI
 Serial.print("Inicializando la memoria SD...");
-
-
 if (!SD.begin(4)){
   Serial.println("Inicializacion fallida...!");//inicializacion fallida de la SD
   return;
@@ -30,7 +28,7 @@ if (!SD.begin(4)){
 Serial.println("Inicializacion correcta :D");
 root = SD.open("/");//directorio de la rama de la SD
 printDirectory(root, 0);//llamamos al directorio de la SD
-}//ver eso del error
+}
 
 void loop() {
   // put your main code here, to run repeatedly: 
