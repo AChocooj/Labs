@@ -14,9 +14,6 @@ void printDirectory(void);
 void setup() {
   // put your setup code here, to run once:
 Serial.begin(9600);
-/*while(!Serial){
-  ;//Esperamos a que se conecte el puerto
-}*/
 SPI.setModule(0);//Configuracion para la inicializacion del SPI
 Serial.print("Inicializando la memoria SD...");
 if (!SD.begin(4)){
